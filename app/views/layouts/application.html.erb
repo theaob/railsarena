@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <style type="text/css">
       body {
@@ -40,7 +41,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <p class="pull-right"><button class="btn" type="submit">Sign in</button></p>
+          <p class="pull-right"><a class="btn primary" data-toggle="modal" href="#registerModal">Sign in</a></p>
         </div>
       </div>
     </div>
@@ -54,6 +55,29 @@
 
 
 </div>
+
+
+<div id="registerModal" class="modal hide fade">
+		  <div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>Register</h3>
+		  </div>
+		  <div class="modal-body">
+			<div id="errorMessage">
+			</div>
+
+			<p>You can register via Facebook or Twitter:</p>
+
+				
+				
+
+		  </div>
+		  <div class="modal-footer">
+			<a data-dismiss="modal"  href="#" class="btn">Close</a>
+		  </div>
+		</div>
+
+
 <footer>
 <p>&copy; Onur Baykal 2012</p>
 </footer>
