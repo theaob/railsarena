@@ -9,7 +9,24 @@
 
     <!-- Le styles -->
     <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '353419201365425',
+            status     : true, 
+            cookie     : true,
+            xfbml      : true,
+            oauth      : true,
+          });
+        };
+        (function(d){
+           var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           d.getElementsByTagName('head')[0].appendChild(js);
+         }(document));
+      </script>
+    <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -41,7 +58,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <p class="pull-right"><a class="btn primary" data-toggle="modal" href="#registerModal">Sign in</a></p>
+          <p class="pull-right"><button class="btn primary" data-keyboard="true" data-controls-modal="registerModal" data-backdrop="true">Sign in</button></p>
         </div>
       </div>
     </div>
@@ -57,7 +74,7 @@
 </div>
 
 
-<div id="registerModal" class="modal hide fade">
+<div id="registerModal" class="modal hide fade" style="display:none">
 		  <div class="modal-header">
 			<a class="close" data-dismiss="modal">×</a>
 			<h3>Register</h3>
@@ -73,7 +90,7 @@
 
 		  </div>
 		  <div class="modal-footer">
-			<a data-dismiss="modal"  href="#" class="btn">Close</a>
+			<button data-dismiss="modal" class="btn close danger">Close</button>
 		  </div>
 		</div>
 
